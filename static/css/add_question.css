@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--bg-1), var(--bg-2));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  color: var(--text-primary);
+  transition: background 0.3s, color 0.3s;
+}
+
+.bg-pattern {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1.4px, transparent 1.4px);
+  background-size: 26px 26px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  background: var(--surface-strong);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 34px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: var(--shadow);
+  z-index: 1;
+  position: relative;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.aq-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 1.15em;
+}
+.admin-pill {
+  -webkit-text-fill-color: initial;
+  background: rgba(6, 182, 212, 0.15);
+  color: var(--accent-teal);
+  font-family: var(--font-body);
+  font-size: 0.55em;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+h1 {
+  text-align: left;
+  font-size: 1.6rem;
+  font-family: var(--font-display);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  margin-bottom: 26px;
+}
+h1 i { color: var(--accent-teal); font-size: 0.85em; }
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--surface-border);
+  margin-bottom: 16px;
+  background: rgba(255,255,255,0.04);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.15);
+}
+select option { background: var(--surface-strong); color: var(--text-primary); }
+textarea {
+  resize: none;
+}
+
+fieldset {
+  border: 1.5px solid var(--surface-border);
+  padding: 18px;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+}
+legend {
+  font-weight: 700;
+  font-family: var(--font-display);
+  padding: 0 8px;
+  color: var(--text-primary);
+}
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.gap-2 { gap: 8px; }
+.gap-4 { gap: 16px; }
+.justify-between { justify-content: space-between; }
+.pt-4 { padding-top: 16px; }
+
+.space-y-2 > div { margin-bottom: 12px; }
+.space-y-2 input[type="text"] { margin-bottom: 0; }
+.space-y-2 input[type="radio"] { width: auto; accent-color: var(--accent-teal); }
+
+.btn {
+  padding: 12px 22px;
+  border-radius: var(--radius-pill);
+  border: none;
+  font-weight: 700;
+  font-family: var(--font-display);
+  cursor: pointer;
+  transition: 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--accent-teal), var(--accent-teal-deep));
+  color: white;
+}
+.btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, var(--danger), var(--danger-deep));
+  color: white;
+}
+.btn-danger:hover { opacity: 0.92; transform: translateY(-2px); }
+
+.btn-gray {
+  background: transparent;
+  border: 1.5px solid var(--surface-border);
+  color: var(--text-muted);
+}
+.btn-gray:hover {
+  background: var(--surface-border);
+  color: var(--text-primary);
+}
+
+@media(max-width:768px) {
+  main { padding: 22px; }
+  .flex.justify-between.pt-4 { flex-direction: column; gap: 14px; align-items: stretch; }
+  .flex.justify-between.pt-4 .flex.gap-4 { justify-content: stretch; }
+  .flex.justify-between.pt-4 .flex.gap-4 .btn { flex: 1; justify-content: center; }
+}
