@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quizzer - Login | Register</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+<meta name="theme-color" content="#06b6d4">
+<link rel="stylesheet" href="/static/css/theme.css">
+<link rel="stylesheet" href="/static/css/login.css">
+
+</head>
+<body>
+
+<!-- Floating circles -->
+<div class="bg-pattern"></div>
+<a href="{{ url_for('home') }}" class="qz-logo brand-mark"><i class="fas fa-shapes"></i> Quizzer</a>
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="flash flash-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<div class="container" id="container">
+
+ 
+    <div class="form-container login-container">
+        <form id="loginForm" action="{{ url_for('login') }}" method="POST">
+            <h2>Login</h2>
+            <div class="input-field">
+                <input type="text" name="identifier" placeholder="Email or Username">
+                <div class="error"></div>
+            </div>
+            <div class="input-field">
+    <input type="password" name="password" placeholder="Password" id="loginPassword">
+    <i class="fas fa-eye toggle-password" toggle="#loginPassword"></i>
+    <div class="error"></div>
+</div>
+
+<button type="submit">Login</button>
+
+            <div class="forgot-password">
+                <a href="{{ url_for('forgot_password') }}">Forgot Password?</a>
+            </div>
+            
+            <div class="toggle-text">Don't have an account? <a href="#" id="showRegister">Sign Up</a></div>
+        </form>
+    </div>
+
+    
+    <div class="form-container register-container">
+        <form id="registerForm" action="{{ url_for('register') }}" method="POST">
+            <h2>Register</h2>
+            <div class="input-field"><input type="text" name="first_name" placeholder="First Name"><div class="error"></div></div>
+            <div class="input-field"><input type="text" name="last_name" placeholder="Last Name"><div class="error"></div></div>
+            <div class="input-field"><input type="text" name="username" placeholder="Username"><div class="error"></div></div>
+            <div class="input-field"><input type="email" name="email" placeholder="Email"><div class="error"></div></div>
+            <div class="input-field">
+                <input type="password" name="password" placeholder="Password" id="regPassword">
+                <i class="fas fa-eye toggle-password" toggle="#regPassword"></i>
+                <div class="error"></div>
+            </div>
+            <div class="input-field">
+                <input type="password" name="confirm_password" placeholder="Confirm Password" id="regConfirmPassword">
+                <i class="fas fa-eye toggle-password" toggle="#regConfirmPassword"></i>
+                <div class="error"></div>
+            </div>
+            <button type="submit">Sign Up</button>
+          
+            <div class="toggle-text">Already have an account? <a href="#" id="showLogin">Login</a></div>
+        </form>
+    </div>
+
+
+    <div class="overlay-container">
+        <h2 id="overlayTitle">Welcome to Quizzer!</h2>
+        <p id="overlayText">Engage in quizzes, challenge friends, and boost your knowledge!</p>
+        <button id="overlayBtn">Get Started</button>
+    </div>
+</div>
+<script src="/static/js/login.js"></script>
+
+</body>
+</html>

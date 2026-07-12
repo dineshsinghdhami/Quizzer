@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quizzer - Interactive Quiz Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="stylesheet" href="/static/css/theme.css">
+<link rel="stylesheet" href="/static/css/main_homepage.css">
+
+<header>
+    <a href="#" class="qz-logo"><i class="fas fa-shapes"></i> Quizzer</a>
+    <i class="fas fa-bars hamburger" id="hamburger"></i>
+    <nav id="nav-menu">
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a href="login" class="btn-signin">Sign In</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Test Your Skills, Track Your Progress</h1>
+        <p>Join Quizzer, the interactive platform where learning meets fun!</p>
+        <p><strong>"Learn. Compete. Conquer."</strong></p>
+        <button class="btn" onclick="location.href='login'">Get Started</button>
+        <button class="btn btn-secondary" onclick="location.href='#features'">Explore Quizzes</button>
+    </div>
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='image/sdd.png') }}" alt="Quiz Illustration">
+    </div>
+</section>
+
+<section class="features" id="features">
+    <div class="feature">
+        <i class="fas fa-trophy"></i>
+        <h3>Track Progress</h3>
+        <p>Complete quizzes and track your progress to improve over time.</p>
+    </div>
+    <div class="feature">
+        <i class="fas fa-users"></i>
+        <h3>Learn Together</h3>
+        <p>Share quiz results with classmates to encourage peer learning.</p>
+    </div>
+    <div class="feature">
+        <i class="fas fa-brain"></i>
+        <h3>Exam Preparation</h3>
+        <p>Practice quizzes based on subjects and semesters to prepare for exams.</p>
+    </div>
+</section>
+
+<section class="faq-container" id="faq">
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>How do I create an account?</h3>
+            <p>Click on the "Sign In" button at the top, register with your details, and start practicing quizzes instantly.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is Quizzer free to use?</h3>
+            <p>Yes! All quizzes and features are completely free for students and learners.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What kind of quizzes are available?</h3>
+            <p>We provide quizzes based on semester levels, subjects, and chapters to help with exam preparation.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I track my progress?</h3>
+            <p>Yes, Quizzer keeps track of your scores and progress so you can see improvement over time.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do I need internet to use Quizzer?</h3>
+            <p>Yes, Quizzer is an online platform, so an internet connection is required.</p>
+        </div>
+    </div>
+    <div class="tips">
+        <h2>Tips & Tricks</h2>
+        <p>💡 Use Quizzer before tests as a quick revision tool.</p>
+        <p>💡 Practice quizzes daily to strengthen your memory.</p>
+        <p>💡 Focus on weaker subjects by attempting chapter-wise quizzes.</p>
+        <p>💡 Review your wrong answers to avoid repeating mistakes in exams.</p>
+        
+    </div>
+</section>
+<footer>
+    <div class="footer-left">&copy; 2025 Quizzer. All Rights Reserved ❤️</div>
+    <div class="footer-center">📧 <a href="mailto:quizzer1pro@gmail.com">contact@quizzer.com</a></div>
+    <div class="social-icons">
+        <a href="https://github.com/dineshsinghdhami/" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/dineshsinghdhami1/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/dineshdhami001" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com/@dineshsinghdhami1" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+</footer>
+
+<script src="/static/js/main_homepage.js"></script>
+</body>
+</html>
