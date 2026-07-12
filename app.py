@@ -10,9 +10,8 @@ from sqlalchemy.sql.expression import func
 
 NEPAL_OFFSET = timedelta(hours=5, minutes=45)
 
-
 app = Flask(__name__)
-app.secret_key = '----'
+# app.secret_key = '----'
 
 # Set session lifetime
 app.permanent_session_lifetime = timedelta(days=30)
@@ -51,8 +50,8 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-EMAIL_SENDER = "........"
-EMAIL_PASSWORD = "........"  
+# EMAIL_SENDER = "........"
+# EMAIL_PASSWORD = "........"  
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 465
 
